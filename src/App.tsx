@@ -4,10 +4,11 @@ import { BrowserRouter as Router, Routes, Route, Link } from 'react-router-dom'
 import { Register } from './screens/Register'
 import { Login } from './screens/Login'
 import { Scheduler } from './screens/Scheduler'
+import { Flex } from '@chakra-ui/react'
 
 function App() {
   return (
-    <div className='App'>
+    <Flex width={'100vw'} height={'100vh'} flex={1}>
       <Router>
         <Routes>
           <Route path='/' element={<Login />} />
@@ -15,7 +16,7 @@ function App() {
           <Route path='/calendario' element={<Scheduler />} />
         </Routes>
       </Router>
-    </div>
+    </Flex>
   )
 }
 
