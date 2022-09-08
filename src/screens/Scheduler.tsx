@@ -1,5 +1,5 @@
 import * as React from 'react'
-import FullCalendar, { formatRange } from '@fullcalendar/react'
+import FullCalendar, { createDuration } from '@fullcalendar/react'
 import { Box, Flex } from '@chakra-ui/react'
 import timeGridPlugin from '@fullcalendar/timegrid'
 
@@ -12,6 +12,11 @@ export const Scheduler = () => {
           initialView='timeGridWeek'
           locale={'pt'}
           allDaySlot={false}
+          slotMinTime={{ hours: 8 }}
+          slotMaxTime={{ hours: 21 }}
+          slotLabelInterval={createDuration({
+            minutes: 15,
+          })}
           slotLabelFormat={{
             hour: '2-digit',
             minute: '2-digit',
