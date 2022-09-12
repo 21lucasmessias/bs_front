@@ -12,8 +12,13 @@ export const Scheduler = () => {
           initialView='timeGridWeek'
           locale={'pt'}
           allDaySlot={false}
-          slotMinTime={{ hours: 8 }}
-          slotMaxTime={{ hours: 21 }}
+          hiddenDays={[0]}
+          showNonCurrentDates={false}
+          eventBorderColor={'rgb(142, 99, 58)'}
+          eventBackgroundColor={'rgb(252, 143, 15)'}
+          slotMinTime={{ hours: 10 }}
+          slotMaxTime={{ hours: 20.5 }}
+          aspectRatio={1.8}
           slotLabelInterval={createDuration({
             minutes: 15,
           })}
@@ -31,7 +36,7 @@ export const Scheduler = () => {
             },
             {
               title: 'Birthday Party',
-              start: '2022-09-08T07:00:00',
+              start: '2022-09-08T16:30:00',
               backgroundColor: 'green',
               borderColor: 'green',
             },

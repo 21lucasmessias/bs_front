@@ -13,7 +13,7 @@ function App() {
         <Routes>
           <Route path='/' element={<Login />} />
           <Route path='/registrar' element={<Register />} />
-          <Route path='/calendario' element={<Scheduler />} />
+          <Route path='/agendamento' element={<Scheduler />} />
         </Routes>
       </Router>
     </Flex>
