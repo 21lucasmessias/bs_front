@@ -16,6 +16,7 @@ export const Scheduler = () => {
           showNonCurrentDates={false}
           eventBorderColor={'rgb(142, 99, 58)'}
           eventBackgroundColor={'rgb(252, 143, 15)'}
+          slotEventOverlap={true}
           slotMinTime={{ hours: 10 }}
           slotMaxTime={{ hours: 20.5 }}
           aspectRatio={1.8}
@@ -29,14 +30,23 @@ export const Scheduler = () => {
           events={[
             {
               title: 'Meeting',
-              start: '2022-09-07T14:30:00',
+              start: '2022-09-15T14:30:00',
+              end: '2022-09-15T15:00:00',
               extendedProps: {
                 status: 'done',
               },
             },
             {
               title: 'Birthday Party',
-              start: '2022-09-08T16:30:00',
+              start: '2022-09-13T16:30:00',
+              end: '2022-09-13T17:00:00',
+              backgroundColor: 'green',
+              borderColor: 'green',
+            },
+            {
+              title: 'Games',
+              start: '2022-09-13T17:00:00',
+              end: '2022-09-13T16:00:00',
               backgroundColor: 'green',
               borderColor: 'green',
             },
