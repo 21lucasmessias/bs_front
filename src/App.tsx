@@ -7,6 +7,7 @@ import { Scheduler } from './screens/Scheduler'
 import Home from './screens/Homepage'
 import ModalCustom from './screens/ModalCustom'
 import { Flex } from '@chakra-ui/react'
+import Teste from './screens/Teste'
 
 function App() {
   return (
@@ -18,6 +19,7 @@ function App() {
           <Route path='/home' element={<Home />} />
           <Route path='/agendamento' element={<Scheduler />} />
           <Route path='/modal' element={<ModalCustom />} />
+          <Route path='/teste' element={<Teste />} />
         </Routes>
       </Router>
     </Flex>
