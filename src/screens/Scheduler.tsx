@@ -1,4 +1,3 @@
-import * as React from 'react'
 import FullCalendar, { createDuration } from '@fullcalendar/react'
 import { Box, Flex } from '@chakra-ui/react'
 import timeGridPlugin from '@fullcalendar/timegrid'
@@ -56,3 +55,5 @@ export const Scheduler = () => {
     </Flex>
   )
 }
+
+export default Scheduler
