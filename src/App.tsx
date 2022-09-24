@@ -1,13 +1,11 @@
-import React from 'react'
-
 import { BrowserRouter as Router, Routes, Route } from 'react-router-dom'
 import { Register } from './screens/Register'
 import { Login } from './screens/Login'
 import { Scheduler } from './screens/Scheduler'
 import Home from './screens/Homepage'
-import ModalCustom from './screens/ModalCustom'
 import { Flex } from '@chakra-ui/react'
-import Teste from './screens/Teste'
+import Cards from './components/Card'
+import Teste1 from './screens/Teste1'
 
 function App() {
   return (
@@ -18,8 +16,8 @@ function App() {
           <Route path='/registrar' element={<Register />} />
           <Route path='/home' element={<Home />} />
           <Route path='/agendamento' element={<Scheduler />} />
-          <Route path='/modal' element={<ModalCustom />} />
-          <Route path='/teste' element={<Teste />} />
+          <Route path='/card' element={<Cards />} />
+          <Route path='/teste' element={<Teste1 />} />
         </Routes>
       </Router>
     </Flex>
