@@ -2,10 +2,8 @@ import { BrowserRouter as Router, Routes, Route } from 'react-router-dom'
 import { Register } from './screens/Register'
 import { Login } from './screens/Login'
 import { Scheduler } from './screens/Scheduler'
-import Home from './screens/Homepage'
+import Home from './screens/Home'
 import { Flex } from '@chakra-ui/react'
-import Cards from './components/Card'
-import Teste1 from './screens/Teste1'
 
 function App() {
   return (
@@ -16,8 +14,6 @@ function App() {
           <Route path='/registrar' element={<Register />} />
           <Route path='/home' element={<Home />} />
           <Route path='/agendamento' element={<Scheduler />} />
-          <Route path='/card' element={<Cards />} />
-          <Route path='/teste' element={<Teste1 />} />
         </Routes>
       </Router>
     </Flex>

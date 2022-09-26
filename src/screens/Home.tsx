@@ -25,7 +25,7 @@ import {
 import {
   FiHome,
   FiTrendingUp,
-  FiCompass,
+  FiCalendar,
   FiStar,
   FiSettings,
   FiMenu,
@@ -43,10 +43,10 @@ interface LinkItemProps {
 }
 const LinkItems: Array<LinkItemProps> = [
   { name: 'Home', icon: FiHome },
-  { name: 'Trending', icon: FiTrendingUp },
-  { name: 'Explore', icon: FiCompass },
-  { name: 'Favourites', icon: FiStar },
-  { name: 'Settings', icon: FiSettings },
+  { name: 'Financeiro', icon: FiTrendingUp },
+  { name: 'Agendamento', icon: FiCalendar },
+  { name: 'Favoritos', icon: FiStar },
+  { name: 'Configurações', icon: FiSettings },
 ]
 
 export default function SidebarWithHeader() {
@@ -79,6 +79,8 @@ export default function SidebarWithHeader() {
         <BarberCard />
         <BarberCard />
         <BarberCard />
+        <BarberCard />
+        <BarberCard />
       </Box>
     </Box>
   )
@@ -94,7 +96,7 @@ const SidebarContent = ({ onClose, ...rest }: SidebarProps) => {
       transition='3s ease'
       bg={useColorModeValue('white', 'gray.900')}
       borderRight='1px'
-      borderRightColor={useColorModeValue('gray.200', 'gray.700')}
+      borderRightColor={useColorModeValue('#0B0B0B', 'gray.700')}
       w={{ base: 'full', md: 60 }}
       pos='fixed'
       h='full'
@@ -194,8 +196,8 @@ const MobileNav = ({ onOpen, ...rest }: MobileProps) => {
           top='0px'
           justifyContent='center'
           alignItems='center'
-          w='125px'
-          h='80px'
+          w='140px'
+          h='90px'
           position='absolute'
           border='0px'
         />
@@ -219,7 +221,9 @@ const MobileNav = ({ onOpen, ...rest }: MobileProps) => {
                   spacing='1px'
                   ml='2'
                 >
-                  <Text fontSize='sm'>Justina Clark</Text>
+                  <Text fontSize='sm' color='gray.600'>
+                    Justina Clark
+                  </Text>
                   <Text fontSize='xs' color='gray.600'>
                     Admin
                   </Text>
@@ -239,21 +243,21 @@ const MobileNav = ({ onOpen, ...rest }: MobileProps) => {
                   bg: '#97632B',
                 }}
               >
-                Profile
+                Perfil
               </MenuItem>
               <MenuItem
                 _hover={{
                   bg: '#97632B',
                 }}
               >
-                Settings
+                Configurações
               </MenuItem>
               <MenuItem
                 _hover={{
                   bg: '#97632B',
                 }}
               >
-                Billing
+                Cobrança
               </MenuItem>
               <MenuDivider />
               <MenuItem
@@ -261,7 +265,7 @@ const MobileNav = ({ onOpen, ...rest }: MobileProps) => {
                   bg: '#97632B',
                 }}
               >
-                Sign out
+                Sair
               </MenuItem>
             </MenuList>
           </Menu>
