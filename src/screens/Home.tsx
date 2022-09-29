@@ -36,6 +36,7 @@ import { IconType } from 'react-icons'
 import { ReactText } from 'react'
 import BarberCard from '../components/CardBarber'
 import logo from '../assets/image/picwish.png'
+import Agendamento from '../components/Agendamentos'
 
 interface LinkItemProps {
   name: string
@@ -76,10 +77,7 @@ export default function SidebarWithHeader() {
       {/* mobilenav */}
       <MobileNav onOpen={onOpen} />
       <Box ml={{ base: 0, md: 60 }} p='4'>
-        <BarberCard />
-        <BarberCard />
-        <BarberCard />
-        <BarberCard />
+        <Agendamento />
         <BarberCard />
       </Box>
     </Box>

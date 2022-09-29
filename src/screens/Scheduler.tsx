@@ -5,17 +5,35 @@ import timeGridPlugin from '@fullcalendar/timegrid'
 export const Scheduler = () => {
   return (
     <Flex flex={1} justifyContent='center' alignItems={'center'}>
-      <Box minW={'1000px'}>
+      <Box minW={'375px'}>
         <FullCalendar
+          customButtons={{
+            myCustomButton: {
+              text: 'Confirmar',
+
+              click: function () {
+                alert('Bottao pressionado')
+              },
+            },
+          }}
+          headerToolbar={{
+            start: 'title',
+            left: 'prev,next',
+            center: 'today',
+            right: 'myCustomButton',
+          }}
+          nowIndicator={true}
+          weekends={false}
           plugins={[timeGridPlugin]}
           initialView='timeGridWeek'
           locale={'pt'}
           allDaySlot={false}
           hiddenDays={[0]}
           showNonCurrentDates={false}
+          eventMaxStack={1}
           eventBorderColor={'rgb(142, 99, 58)'}
           eventBackgroundColor={'rgb(252, 143, 15)'}
-          slotEventOverlap={true}
+          slotEventOverlap={false}
           slotMinTime={{ hours: 10 }}
           slotMaxTime={{ hours: 20.5 }}
           aspectRatio={1.8}
@@ -37,8 +55,9 @@ export const Scheduler = () => {
             },
             {
               title: 'Birthday Party',
-              start: '2022-09-13T16:30:00',
-              end: '2022-09-13T17:00:00',
+              start: '2022-09-27T16:30:00',
+              end: '2022-09-27T17:00:00',
+              url: 'http://google.com/',
               backgroundColor: 'green',
               borderColor: 'green',
             },
