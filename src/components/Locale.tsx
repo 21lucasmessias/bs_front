@@ -1,5 +1,5 @@
 import React from 'react'
-import { Container, Box } from '@chakra-ui/react'
+import { Container, Box, CloseButton } from '@chakra-ui/react'
 import { useNavigate } from 'react-router-dom'
 
 const Agendamentos = () => {
@@ -7,6 +7,7 @@ const Agendamentos = () => {
 
   return (
     <Container>
+      <CloseButton />
       <Container fontSize={25}>Selecione a Unidade</Container>
       <Container
         onClick={() => navigate('/registrar')}

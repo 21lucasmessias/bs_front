@@ -23,6 +23,7 @@ export const Scheduler = () => {
             right: 'myCustomButton',
           }}
           nowIndicator={true}
+          height={'auto'}
           weekends={false}
           plugins={[timeGridPlugin]}
           initialView='timeGridWeek'
@@ -33,7 +34,6 @@ export const Scheduler = () => {
           eventMaxStack={1}
           eventBorderColor={'rgb(142, 99, 58)'}
           eventBackgroundColor={'rgb(252, 143, 15)'}
-          slotEventOverlap={false}
           slotMinTime={{ hours: 10 }}
           slotMaxTime={{ hours: 20.5 }}
           aspectRatio={1.8}

@@ -3,14 +3,12 @@ import {
   Avatar,
   Box,
   Center,
-  Image,
   Flex,
   Text,
   Stack,
   Button,
   useColorModeValue,
 } from '@chakra-ui/react'
-import { scaleCorrectors } from 'framer-motion/types/projection/styles/scale-correction'
 
 export default function SocialProfileWithImage() {
   return (
@@ -40,7 +38,6 @@ export default function SocialProfileWithImage() {
             <Heading fontSize={'2xl'} fontWeight={500} fontFamily={'body'}>
               Neymar Junior
             </Heading>
-            <Text color={'gray.500'}>Barbeiro</Text>
           </Stack>
 
           <Stack direction={'row'} justify={'center'} spacing={6}>

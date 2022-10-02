@@ -36,7 +36,7 @@ import { IconType } from 'react-icons'
 import { ReactText } from 'react'
 import BarberCard from '../components/CardBarber'
 import logo from '../assets/image/picwish.png'
-import Agendamento from '../components/Agendamentos'
+import Agendamento from '../components/Locale'
 
 interface LinkItemProps {
   name: string
