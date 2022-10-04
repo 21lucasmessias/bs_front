@@ -1,31 +1,31 @@
 import React from 'react'
-import { Box, Image, Text } from '@chakra-ui/react'
+import { useNavigate } from 'react-router-dom'
+import { Image, Text, Button, Stack } from '@chakra-ui/react'
 import barbearia from '../assets/image/barbershop.png'
 import tesoura from '../assets/image/hairdressing-scissors.png'
 import barbeiro from '../assets/image/barber.png'
 import date from '../assets/image/simbolo-de-data-e-hora-do-evento.png'
 
 export const OptionBarber = () => {
+  const navigate = useNavigate()
   return (
-    <Box w='100%' h='100%'>
-      <Box borderRightRadius={15} bg='#4d4d4d' marginLeft={3} marginRight={3}>
-        <Box display='flex' alignItems={'center'} justifyContent={'center'}>
-          <Image src={barbearia} w='40px' h='40px' />
-          <Text marginLeft={2}>Unidade</Text>
-        </Box>
-        <Box display='flex' alignItems={'center'} justifyContent={'center'}>
-          <Image src={tesoura} w='40px' h='40px' />
-          <Text marginLeft={2}>Serviço</Text>
-        </Box>
-        <Box display='flex' alignItems={'center'} justifyContent={'center'}>
-          <Image src={barbeiro} w='40px' h='40px' />
-          <Text marginLeft={2}>Barbeiro</Text>
-        </Box>
-        <Box display='flex' alignItems={'center'} justifyContent={'center'}>
-          <Image src={date} w='40px' h='40px' />
-          <Text marginLeft={2}>Data e Hora</Text>
-        </Box>
-      </Box>
-    </Box>
+    <Stack w='100%' h='35%' bg='white !important' justifyContent={'center'}>
+      <Button alignItems={'center'} onClick={() => navigate('/unidades')}>
+        <Image src={barbearia} w='40px' h='40px' />
+        <Text paddingLeft={18}> Unidade</Text>
+      </Button>
+      <Button onClick={() => navigate('/service')}>
+        <Image src={tesoura} w='40px' h='40px' />
+        <Text paddingLeft={18}> Serviços</Text>
+      </Button>
+      <Button>
+        <Image src={barbeiro} w='40px' h='40px' />
+        <Text paddingLeft={18}> Barbeiros</Text>
+      </Button>
+      <Button>
+        <Image src={date} w='40px' h='40px' />
+        <Text paddingLeft={18}> Data e Hora</Text>
+      </Button>
+    </Stack>
   )
 }

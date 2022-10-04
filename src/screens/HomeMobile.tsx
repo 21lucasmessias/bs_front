@@ -12,13 +12,18 @@ import {
 import { IoPersonOutline, IoCalendarOutline, IoSettingsOutline } from 'react-icons/io5'
 import React from 'react'
 
-import Serviços from '../components/Serviços'
+import background from '../assets/image/picwish.png'
+
+import { OptionBarber } from '../components/OptionBarber'
 
 const HomeMobile = () => {
   const { isOpen, onOpen, onClose } = useDisclosure()
 
   return (
-    <Box>
+    <Box w='100%' h='100%'>
+      <Box w='100%' h='90%' position='absolute' bg='#0B0B0B'>
+        <Image src={background} />
+      </Box>
       <Box bg='white' position='absolute' bottom='0' h='10%' w='100%'>
         <Tabs justifyContent={'center'} isFitted variant='enclosed'>
           <TabList color='#9d9eb4'>
@@ -27,7 +32,7 @@ const HomeMobile = () => {
               <Text>Agendar</Text>
               <Drawer isOpen={isOpen} placement='bottom' onClose={onClose}>
                 <DrawerContent>
-                  <Serviços />
+                  <OptionBarber />
                 </DrawerContent>
               </Drawer>
             </Tab>

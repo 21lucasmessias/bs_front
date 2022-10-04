@@ -34,7 +34,7 @@ export default function Serviços() {
     setTotal(totalPrice)
   }
   return (
-    <Box>
+    <Box h='50%' w='100%'>
       <CloseButton />
       <CheckboxGroup colorScheme='green'>
         <Stack display='flex' bottom='0' w='100%'>

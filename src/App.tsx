@@ -5,9 +5,11 @@ import { Scheduler } from './screens/Scheduler'
 import Home from './screens/Home'
 import { Flex } from '@chakra-ui/react'
 
-import Serviços from './components/Serviços'
+import CardBarber from './components/CardBarber'
+import Servicos from './components/Servicos'
 import HomeMobile from './screens/HomeMobile'
 import { OptionBarber } from './components/OptionBarber'
+import Agendamentos from './components/Locale'
 
 function App() {
   return (
@@ -18,8 +20,10 @@ function App() {
           <Route path='/registrar' element={<Register />} />
           <Route path='/home' element={<Home />} />
           <Route path='/mobile' element={<HomeMobile />} />
+          <Route path='/barber' element={<CardBarber />} />
           <Route path='/calendario' element={<Scheduler />} />
-          <Route path='/service' element={<Serviços />} />
+          <Route path='/unidades' element={<Agendamentos />} />
+          <Route path='/service' element={<Servicos />} />
           <Route path='/option' element={<OptionBarber />} />
         </Routes>
       </Router>
