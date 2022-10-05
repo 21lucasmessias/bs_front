@@ -10,7 +10,6 @@ import {
   DrawerContent,
 } from '@chakra-ui/react'
 import { IoPersonOutline, IoCalendarOutline, IoSettingsOutline } from 'react-icons/io5'
-import React from 'react'
 
 import background from '../assets/image/picwish.png'
 
@@ -22,7 +21,7 @@ const HomeMobile = () => {
   return (
     <Box w='100%' h='100%'>
       <Box w='100%' h='90%' position='absolute' bg='#0B0B0B'>
-        <Image src={background} />
+        <Image paddingTop='16' src={background} />
       </Box>
       <Box bg='white' position='absolute' bottom='0' h='10%' w='100%'>
         <Tabs justifyContent={'center'} isFitted variant='enclosed'>

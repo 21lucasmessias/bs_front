@@ -9,6 +9,7 @@ import {
   Box,
 } from '@chakra-ui/react'
 
+import { useNavigate } from 'react-router'
 import { useState } from 'react'
 import { IoIosArrowForward, IoIosArrowBack } from 'react-icons/io'
 import { cutData } from '../utils/price'
@@ -16,6 +17,7 @@ import { cutData } from '../utils/price'
 const getFormattedPrice = (price) => `$${price.toFixed(2)}`
 
 export default function Serviços() {
+  const navigate = useNavigate()
   const [checkedState, setCheckedState] = useState(new Array(cutData.length).fill(false))
   const [total, setTotal] = useState(0)
   const handleOnChange = (position) => {
@@ -33,9 +35,10 @@ export default function Serviços() {
 
     setTotal(totalPrice)
   }
+
   return (
     <Box h='50%' w='100%'>
-      <CloseButton />
+      <CloseButton onClick={() => navigate('/mobile')} />
       <CheckboxGroup colorScheme='green'>
         <Stack display='flex' bottom='0' w='100%'>
           {cutData.map(({ name, price }, index) => {
@@ -72,6 +75,7 @@ export default function Serviços() {
                 bg: '#97632B',
                 color: 'white',
               }}
+              onClick={() => navigate('/agenda/unidade/service/barber')}
             >
               <Text>Total: {getFormattedPrice(total)}</Text>
               <Text marginLeft={2}>Confirmar</Text>

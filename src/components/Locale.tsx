@@ -7,10 +7,10 @@ const Agendamentos = () => {
 
   return (
     <Container>
-      <CloseButton />
+      <CloseButton onClick={() => navigate('/mobile')} />
       <Container fontSize={25}>Selecione a Unidade</Container>
       <Container
-        onClick={() => navigate('/registrar')}
+        onClick={() => navigate('/agenda/unidade/service')}
         marginBottom={3}
         padding='8px '
         border='1px'
@@ -19,6 +19,7 @@ const Agendamentos = () => {
         color='#4D4341'
         fontSize={20}
         _hover={{
+          color: '#97632B',
           transition: 'all 0.5s',
           WebkitTransform: 'scale(1.1)',
         }}

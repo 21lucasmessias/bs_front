@@ -8,9 +8,10 @@ import date from '../assets/image/simbolo-de-data-e-hora-do-evento.png'
 
 export const OptionBarber = () => {
   const navigate = useNavigate()
+
   return (
     <Stack w='100%' h='35%' bg='white !important' justifyContent={'center'}>
-      <Button alignItems={'center'} onClick={() => navigate('/unidades')}>
+      <Button alignItems={'center'} onClick={() => navigate('/agenda/unidade')}>
         <Image src={barbearia} w='40px' h='40px' />
         <Text paddingLeft={18}> Unidade</Text>
       </Button>

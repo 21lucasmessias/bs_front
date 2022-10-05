@@ -20,10 +20,10 @@ function App() {
           <Route path='/registrar' element={<Register />} />
           <Route path='/home' element={<Home />} />
           <Route path='/mobile' element={<HomeMobile />} />
-          <Route path='/barber' element={<CardBarber />} />
+          <Route path='/agenda/unidade/service/barber' element={<CardBarber />} />
           <Route path='/calendario' element={<Scheduler />} />
-          <Route path='/unidades' element={<Agendamentos />} />
-          <Route path='/service' element={<Servicos />} />
+          <Route path='/agenda/unidade' element={<Agendamentos />} />
+          <Route path='/agenda/unidade/service' element={<Servicos />} />
           <Route path='/option' element={<OptionBarber />} />
         </Routes>
       </Router>
