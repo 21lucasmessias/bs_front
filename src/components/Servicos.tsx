@@ -66,7 +66,7 @@ export default function Serviços() {
                 color: 'white',
               }}
             >
-              <IoIosArrowBack></IoIosArrowBack>
+              <IoIosArrowBack onClick={() => navigate('/agenda/unidade')}></IoIosArrowBack>
             </Button>
             <Button
               bg='#313131'

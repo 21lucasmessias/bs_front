@@ -21,7 +21,7 @@ function App() {
           <Route path='/home' element={<Home />} />
           <Route path='/mobile' element={<HomeMobile />} />
           <Route path='/agenda/unidade/service/barber' element={<CardBarber />} />
-          <Route path='/calendario' element={<Scheduler />} />
+          <Route path='/agenda/unidade/service/barber/calendario' element={<Scheduler />} />
           <Route path='/agenda/unidade' element={<Agendamentos />} />
           <Route path='/agenda/unidade/service' element={<Servicos />} />
           <Route path='/option' element={<OptionBarber />} />

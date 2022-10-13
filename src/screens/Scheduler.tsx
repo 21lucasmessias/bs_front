@@ -12,7 +12,7 @@ export const Scheduler = () => {
               text: 'Confirmar',
 
               click: function () {
-                alert('Bottao pressionado')
+                alert('Seu horario é ... no dia ... com o fulano')
               },
             },
           }}

@@ -1,6 +1,7 @@
-import { Avatar, Box, Stack, Text, Grid, CloseButton } from '@chakra-ui/react'
+import { Avatar, Box, Stack, Text, Grid, CloseButton, Button, ButtonGroup } from '@chakra-ui/react'
 import { useNavigate } from 'react-router'
 import { cardData } from '../utils/card'
+import { IoIosArrowForward, IoIosArrowBack } from 'react-icons/io'
 
 export default function SocialProfileWithImage() {
   const navigate = useNavigate()
@@ -20,6 +21,14 @@ export default function SocialProfileWithImage() {
           )
         })}
       </Grid>
+      <ButtonGroup>
+        <Button w='40%' onClick={() => navigate('/agenda/unidade/service')}>
+          <IoIosArrowBack></IoIosArrowBack>
+        </Button>
+        <Button w='40%' onClick={() => navigate('/agenda/unidade/service/barber/calendario')}>
+          <IoIosArrowForward></IoIosArrowForward>
+        </Button>
+      </ButtonGroup>
     </Stack>
   )
 }
