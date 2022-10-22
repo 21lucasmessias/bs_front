@@ -13,8 +13,6 @@ import Typography from '@mui/material/Typography';
 import { LocaleData } from '../utils/LocalesUtils';
 
 export default function CardLocale() {
-    const theme = useTheme();
-
     return (
         <Box>
             {LocaleData.map(({ name, address, image }) => {
