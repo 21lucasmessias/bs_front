@@ -1,34 +1,19 @@
-import { BrowserRouter as Router, Routes, Route } from 'react-router-dom'
-import { Register } from './screens/Register'
-import { Login } from './screens/Login'
-import { Scheduler } from './screens/Scheduler'
-import Home from './screens/Home'
-import { Flex } from '@chakra-ui/react'
+import { Routes, Route } from 'react-router-dom';
 
-import CardBarber from './components/CardBarber'
-import Servicos from './components/Servicos'
-import HomeMobile from './screens/HomeMobile'
-import { OptionBarber } from './components/OptionBarber'
-import Agendamentos from './components/Locale'
+import Box from '@mui/material/Box';
+import ClientPage from './pages/Client';
+import ClientTeste from './pages/Client2';
 
-function App() {
-  return (
-    <Flex width={'100vw'} height={'100vh'} flex={1}>
-      <Router>
-        <Routes>
-          <Route path='/' element={<Login />} />
-          <Route path='/registrar' element={<Register />} />
-          <Route path='/home' element={<Home />} />
-          <Route path='/mobile' element={<HomeMobile />} />
-          <Route path='/agenda/unidade/service/barber' element={<CardBarber />} />
-          <Route path='/agenda/unidade/service/barber/calendario' element={<Scheduler />} />
-          <Route path='/agenda/unidade' element={<Agendamentos />} />
-          <Route path='/agenda/unidade/service' element={<Servicos />} />
-          <Route path='/option' element={<OptionBarber />} />
-        </Routes>
-      </Router>
-    </Flex>
-  )
+import CardLocale from './components/Locale';
+
+export function App() {
+    return (
+        <Box width={'100vw'} height={'100vh'} flex={1}>
+            <Routes>
+                <Route path="/home" element={<ClientPage />} />
+                <Route path="/teste" element={<ClientTeste />} />
+                <Route path="/locale" element={<CardLocale />} />
+            </Routes>
+        </Box>
+    );
 }
-
-export default App

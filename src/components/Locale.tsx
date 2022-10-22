@@ -1,74 +1,48 @@
-import React from 'react'
-import { Container, Box, CloseButton } from '@chakra-ui/react'
-import { useNavigate } from 'react-router-dom'
+import * as React from 'react';
 
-const Agendamentos = () => {
-  const navigate = useNavigate()
+import { useTheme } from '@mui/material/styles';
+import Box from '@mui/material/Box';
+import Card from '@mui/material/Card';
+import CardContent from '@mui/material/CardContent';
+import CardMedia from '@mui/material/CardMedia';
+import Button from '@mui/material/Button';
+import ChevronRightIcon from '@mui/icons-material/ChevronRight';
 
-  return (
-    <Container>
-      <CloseButton onClick={() => navigate('/mobile')} />
-      <Container fontSize={25}>Selecione a Unidade</Container>
-      <Container
-        onClick={() => navigate('/agenda/unidade/service')}
-        marginBottom={3}
-        padding='8px '
-        border='1px'
-        cursor='pointer'
-        maxW='md'
-        color='#4D4341'
-        fontSize={20}
-        _hover={{
-          color: '#97632B',
-          transition: 'all 0.5s',
-          WebkitTransform: 'scale(1.1)',
-        }}
-      >
-        Unidade Sabará Matriz
-        <Box fontSize={15}>
-          {' '}
-          Av. Lions Club de Ponta Grossa, 180 - Chapada, Ponta Grossa - PR, 84062-160
+import Typography from '@mui/material/Typography';
+
+import { LocaleData } from '../utils/LocalesUtils';
+
+export default function CardLocale() {
+    const theme = useTheme();
+
+    return (
+        <Box>
+            {LocaleData.map(({ name, address, image }) => {
+                return (
+                    <Card>
+                        <Box sx={{ display: 'flex' }} padding={0.4}>
+                            <CardMedia component="img" sx={{ width: 151 }} image={image} alt={name} />
+                            <Box sx={{ display: 'flex', flexDirection: 'column' }}>
+                                <CardContent sx={{ flex: '1 0 auto' }}>
+                                    <Typography component="div" variant="h5">
+                                        {name}
+                                    </Typography>
+                                    <Typography variant="subtitle2" color="text.secondary" component="div">
+                                        {address}
+                                    </Typography>
+                                </CardContent>
+                                <Box sx={{ display: 'flex', alignItems: 'center', pl: 1, pb: 1 }}></Box>
+                            </Box>
+                        </Box>
+                    </Card>
+                );
+            })}
+            <Box display="flex" justifyContent="center" padding={2}>
+                <Button variant="contained">
+                    Proximo
+                    <ChevronRightIcon />
+                </Button>
+            </Box>
         </Box>
-      </Container>
-      <Container
-        marginBottom={3}
-        padding='8px '
-        border='1px'
-        cursor='pointer'
-        maxW='md'
-        color='#4D4341'
-        fontSize={20}
-        _hover={{
-          transition: 'all 0.5s',
-          WebkitTransform: 'scale(1.1)',
-        }}
-      >
-        Unidade Sabará Uvaranas
-        <Box fontSize={15}>
-          {' '}
-          Av. General Carlos Cavalcanti, 3098 - Uvaranas, Ponta Grossa - PR, 84030-000
-        </Box>
-      </Container>
-      <Container
-        padding='8px '
-        border='1px'
-        cursor='pointer'
-        maxW='md'
-        color='#4D4341'
-        fontSize={20}
-        _hover={{
-          transition: 'all 0.5s',
-          WebkitTransform: 'scale(1.1)',
-        }}
-      >
-        Unidade Sabará Oficinas
-        <Box fontSize={15}>
-          {' '}
-          Rua Thaumaturgo de Azevedo, 32 - Oficinas, Ponta Grossa - PR, 84036-210
-        </Box>
-      </Container>
-    </Container>
-  )
+    );
 }
-
-export default Agendamentos
