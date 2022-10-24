@@ -18,7 +18,7 @@ const theme = createTheme({
             main: '#3C3F4B',
         },
         secondary: {
-            main: '#f180ac',
+            main: '#C7BEBF',
             contrastText: '#ffffff',
         },
         background: {

@@ -37,7 +37,7 @@ export default function ClientTeste() {
     return (
         <Box sx={{ pb: 7 }} ref={ref}>
             <Box sx={{ width: '100%' }}>
-                <Stepper activeStep={4} alternativeLabel>
+                <Stepper activeStep={2} alternativeLabel>
                     {steps.map((label) => (
                         <Step key={label}>
                             <StepLabel>{label}</StepLabel>

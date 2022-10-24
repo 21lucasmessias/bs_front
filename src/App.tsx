@@ -5,6 +5,7 @@ import Box from '@mui/material/Box';
 import ClientPage from './pages/Client';
 import ClientTeste from './pages/Client2';
 
+import CardBarber from './components/Barber';
 import CardLocale from './components/Locale';
 
 export function App() {
@@ -15,6 +16,7 @@ export function App() {
                 <Route path="/home" element={<ClientPage />} />
                 <Route path="/teste" element={<ClientTeste />} />
                 <Route path="/locale" element={<CardLocale />} />
+                <Route path="/barber" element={<CardBarber />} />
             </Routes>
         </Box>
     );
