@@ -4,7 +4,7 @@ import CardContent from '@mui/material/CardContent';
 import CardMedia from '@mui/material/CardMedia';
 import Typography from '@mui/material/Typography';
 import { CardActionArea } from '@mui/material';
-import Rashide from '../assets/image/RASHIDAAAAAAAO.png';
+import Rashide from '../assets/image/foto2.png';
 
 export default function CardBarber() {
     return (
@@ -19,7 +19,7 @@ export default function CardBarber() {
         >
             <CardActionArea>
                 <CardMedia
-                    sx={{ width: 109, height: 105.16, margin: 0, borderRadius: 7, border }}
+                    sx={{ width: 109, height: 105.16, margin: 0, borderRadius: 7 }}
                     component="img"
                     image={Rashide}
                     alt="name"
