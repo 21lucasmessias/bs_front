@@ -2,23 +2,23 @@ import { Routes, Route, useLocation, Navigate } from 'react-router-dom';
 import CssBaseline from '@mui/material/CssBaseline';
 
 import Box from '@mui/material/Box';
-import ClientPage from './pages/Client';
 
 import { useAuth } from './contexts/AuthContext';
 
 import { CircularProgress } from '@mui/material';
+import { Main } from './pages/Main';
 
 export function App() {
     return (
         <Box width={'100vw'} height={'100vh'}>
             <CssBaseline />
             <Routes>
-                {/*<Route path="/" element={<LoginPage />} />*/}
+                <Route path="/" element={<Main />} />
                 <Route
                     path="/home"
                     element={
                         <RequireAuth>
-                            <ClientPage />
+                            <Main />
                         </RequireAuth>
                     }
                 />
