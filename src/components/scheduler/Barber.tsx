@@ -1,13 +1,11 @@
-import * as React from 'react';
 import Card from '@mui/material/Card';
 
+import { CardActionArea } from '@mui/material';
 import CardMedia from '@mui/material/CardMedia';
 import Typography from '@mui/material/Typography';
-import { CardActionArea } from '@mui/material';
-import Grid from '@mui/material/Grid';
-import { BarberData } from '../utils/BarberUtils';
 import { Box } from '@mui/system';
-import { resolvePath } from 'react-router-dom';
+
+import { BarberData } from '../../utils/BarberUtils';
 
 export default function CardBarber() {
     return (

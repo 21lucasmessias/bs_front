@@ -1,11 +1,10 @@
-import Container from '@mui/material/Container';
 import * as React from 'react';
 import Box from '@mui/material/Box';
-import { PriceData } from '../utils/PriceUtils';
-import { useState } from 'react';
+import Container from '@mui/material/Container';
+
+import { PriceData } from '../../utils/PriceUtils';
 
 import { Typography } from '@mui/material';
-import { createTheme } from '@mui/material/styles';
 
 export default function ListPrice() {
     const [value, setValue] = React.useState('one');

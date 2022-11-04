@@ -1,7 +1,7 @@
 import React from 'react';
 import { createRoot } from 'react-dom/client';
 import { BrowserRouter } from 'react-router-dom';
-import { App } from './App';
+import { Router } from './Router';
 
 import { createTheme, ThemeProvider } from '@mui/material/styles';
 import type {} from '@mui/lab/themeAugmentation';
@@ -46,7 +46,7 @@ root.render(
         <BrowserRouter>
             <ThemeProvider theme={theme}>
                 <AuthProvider>
-                    <App />
+                    <Router />
                 </AuthProvider>
             </ThemeProvider>
         </BrowserRouter>

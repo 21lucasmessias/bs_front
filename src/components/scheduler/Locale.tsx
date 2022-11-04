@@ -1,16 +1,13 @@
-import * as React from 'react';
-
-import { useTheme } from '@mui/material/styles';
+import ChevronRightIcon from '@mui/icons-material/ChevronRight';
 import Box from '@mui/material/Box';
+import Button from '@mui/material/Button';
 import Card from '@mui/material/Card';
 import CardContent from '@mui/material/CardContent';
 import CardMedia from '@mui/material/CardMedia';
-import Button from '@mui/material/Button';
-import ChevronRightIcon from '@mui/icons-material/ChevronRight';
 
 import Typography from '@mui/material/Typography';
 
-import { LocaleData } from '../utils/LocalesUtils';
+import { LocaleData } from '../../utils/LocalesUtils';
 
 export default function CardLocale() {
     return (

@@ -6,19 +6,19 @@ import Box from '@mui/material/Box';
 import { useAuth } from './contexts/AuthContext';
 
 import { CircularProgress } from '@mui/material';
-import { Main } from './pages/Main';
+import { Home } from './pages/Home';
 
-export function App() {
+export function Router() {
     return (
         <Box width={'100vw'} height={'100vh'}>
             <CssBaseline />
             <Routes>
-                <Route path="/" element={<Main />} />
+                <Route path="/" element={<Home />} />
                 <Route
                     path="/home"
                     element={
                         <RequireAuth>
-                            <Main />
+                            <Home />
                         </RequireAuth>
                     }
                 />
