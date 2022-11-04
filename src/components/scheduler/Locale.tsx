@@ -6,10 +6,11 @@ import CardContent from '@mui/material/CardContent';
 import CardMedia from '@mui/material/CardMedia';
 
 import Typography from '@mui/material/Typography';
+import { SchedulerRouteParams } from '../../pages/Scheduler';
 
 import { LocaleData } from '../../utils/LocalesUtils';
 
-export default function CardLocale() {
+export function CardLocale({ backStep, nextStep }: SchedulerRouteParams) {
     return (
         <Box>
             {LocaleData.map(({ name, address, image }) => {
@@ -32,8 +33,16 @@ export default function CardLocale() {
                     </Card>
                 );
             })}
-            <Box display="flex" justifyContent="center" padding={2}>
-                <Button variant="contained">
+            <Box
+                display="flex"
+                justifyContent="center"
+                padding={2}
+                position={'fixed'}
+                bottom={'3rem'}
+                right={0}
+                left={0}
+            >
+                <Button variant="contained" onClick={nextStep}>
                     Proximo
                     <ChevronRightIcon />
                 </Button>

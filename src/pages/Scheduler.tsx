@@ -1,9 +1,12 @@
-import { useState } from 'react';
+import { useState, useMemo } from 'react';
 import Box from '@mui/material/Box';
 
 import Stepper from '@mui/material/Stepper';
 import Step from '@mui/material/Step';
 import StepLabel from '@mui/material/StepLabel';
+import { CardLocale } from '../components/scheduler/Locale';
+import { ListPrice } from '../components/scheduler/ListPrice';
+import { CardBarber } from '../components/scheduler/Barber';
 
 export type SchedulerRouteParams = {
     nextStep: () => void;
@@ -12,7 +15,28 @@ export type SchedulerRouteParams = {
 
 const steps = ['Local', 'Serviço', 'Barbeiro', 'Horario'];
 
-export const Scheduler: () => JSX.Element = () => {
+type Routes = 'Local' | 'Serviço' | 'Barbeiro' | 'Horario';
+
+const schedulerRoutes = {
+    Local: {
+        name: 'Local',
+        Component: (params: SchedulerRouteParams) => <CardLocale {...params} />,
+    },
+    Serviço: {
+        name: 'Serviço',
+        Component: (params: SchedulerRouteParams) => <ListPrice {...params} />,
+    },
+    Barbeiro: {
+        name: 'Barbeiro',
+        Component: (params: SchedulerRouteParams) => <CardBarber {...params} />,
+    },
+    Horario: {
+        name: 'Horario',
+        Component: (params: SchedulerRouteParams) => <></>,
+    },
+};
+
+export function Scheduler() {
     const [actualStep, setActualStep] = useState(0);
 
     const nextStep = () => {
@@ -22,6 +46,25 @@ export const Scheduler: () => JSX.Element = () => {
     const backStep = () => {
         setActualStep(actualStep > 0 ? actualStep - 1 : 0);
     };
+
+    const actualPage = useMemo<Routes>(() => {
+        switch (actualStep) {
+            case 0:
+                return 'Local';
+            case 1:
+                return 'Serviço';
+            case 2:
+                return 'Barbeiro';
+            case 3:
+                return 'Horario';
+            default:
+                return 'Local';
+        }
+    }, [actualStep]);
+
+    const page = useMemo(() => {
+        return schedulerRoutes[actualPage];
+    }, [actualPage]);
 
     return (
         <Box display={'flex'} width={'100%'} flexDirection="column">
@@ -35,9 +78,9 @@ export const Scheduler: () => JSX.Element = () => {
                 </Stepper>
             </Box>
 
-            <Box width={'100%'} flex={1} display={'flex'}>
-                Teste
+            <Box width={'100%'} flex={1} display={'flex'} paddingTop={'0.5rem'}>
+                {<page.Component backStep={backStep} nextStep={nextStep} />}
             </Box>
         </Box>
     );
-};
+}

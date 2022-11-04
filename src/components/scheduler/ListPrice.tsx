@@ -1,12 +1,15 @@
 import * as React from 'react';
 import Box from '@mui/material/Box';
 import Container from '@mui/material/Container';
+import Button from '@mui/material/Button';
+import ChevronRightIcon from '@mui/icons-material/ChevronRight';
 
 import { PriceData } from '../../utils/PriceUtils';
 
 import { Typography } from '@mui/material';
+import { SchedulerRouteParams } from '../../pages/Scheduler';
 
-export default function ListPrice() {
+export function ListPrice({ backStep, nextStep }: SchedulerRouteParams) {
     const [value, setValue] = React.useState('one');
 
     const handleChange = (event: React.SyntheticEvent, newValue: string) => {
@@ -48,6 +51,20 @@ export default function ListPrice() {
                     </Box>
                 );
             })}
+            <Box
+                display="flex"
+                justifyContent="center"
+                padding={2}
+                position={'fixed'}
+                bottom={'3rem'}
+                right={0}
+                left={0}
+            >
+                <Button variant="contained" onClick={nextStep}>
+                    Proximo
+                    <ChevronRightIcon />
+                </Button>
+            </Box>
         </Box>
     );
 }
