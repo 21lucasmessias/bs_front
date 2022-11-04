@@ -19,14 +19,14 @@ export function Home() {
     }, [actualPage]);
 
     return (
-        <Box>
+        <Box display="flex" flex={1} width={'100%'} height={'100%'} flexDirection="column">
             <CssBaseline />
 
-            <Box flex={1} width={'100%'} padding={'1rem'}>
+            <Box display="flex" flex={1} width={'100%'} padding={'1rem'}>
                 {<page.Component />}
             </Box>
 
-            <Paper sx={{ position: 'fixed', bottom: 0, left: 0, right: 0 }} elevation={3}>
+            <Paper elevation={3}>
                 <BottomNavigation
                     showLabels
                     value={actualPage}

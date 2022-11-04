@@ -24,15 +24,19 @@ export const Scheduler: () => JSX.Element = () => {
     };
 
     return (
-        <Box>
-            <Box sx={{ width: '100%', paddingTop: '1rem' }}>
-                <Stepper activeStep={actualStep} alternativeLabel>
+        <Box display={'flex'} width={'100%'} flexDirection="column">
+            <Box width={'100%'} paddingTop={'1rem'}>
+                <Stepper activeStep={actualStep} alternativeLabel defaultValue={'Local'}>
                     {steps.map((label) => (
                         <Step key={label}>
                             <StepLabel>{label}</StepLabel>
                         </Step>
                     ))}
                 </Stepper>
+            </Box>
+
+            <Box width={'100%'} flex={1} display={'flex'}>
+                Teste
             </Box>
         </Box>
     );
