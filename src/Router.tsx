@@ -7,6 +7,8 @@ import { useAuth } from './contexts/AuthContext';
 
 import { CircularProgress } from '@mui/material';
 import { Home } from './pages/Home';
+import { SignIn } from './pages/Login';
+import { SignUp } from './pages/Register';
 
 export function Router() {
     return (
@@ -14,6 +16,8 @@ export function Router() {
             <CssBaseline />
             <Routes>
                 <Route path="/" element={<Home />} />
+                <Route path="/login" element={<SignIn />} />
+                <Route path="/register" element={<SignUp />} />
                 <Route
                     path="/home"
                     element={
