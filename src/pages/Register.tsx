@@ -3,18 +3,13 @@ import Avatar from '@mui/material/Avatar';
 import Button from '@mui/material/Button';
 import CssBaseline from '@mui/material/CssBaseline';
 import TextField from '@mui/material/TextField';
-import FormControlLabel from '@mui/material/FormControlLabel';
-import Checkbox from '@mui/material/Checkbox';
+import logo from '../assets/image/logo.png';
 import Link from '@mui/material/Link';
 import Grid from '@mui/material/Grid';
 import Box from '@mui/material/Box';
 import LockOutlinedIcon from '@mui/icons-material/LockOutlined';
 import Typography from '@mui/material/Typography';
 import Container from '@mui/material/Container';
-import { createTheme, ThemeProvider } from '@mui/material/styles';
-import { useState } from 'react';
-
-const theme = createTheme();
 
 export function SignUp() {
     const handleSubmit = (event: React.FormEvent<HTMLFormElement>) => {
@@ -27,7 +22,7 @@ export function SignUp() {
     };
 
     return (
-        <ThemeProvider theme={theme}>
+        <Box sx={{ backgroundColor: 'secondary.main', height: 1000 }}>
             <Container component="main" maxWidth="xs">
                 <CssBaseline />
                 <Box
@@ -38,9 +33,7 @@ export function SignUp() {
                         alignItems: 'center',
                     }}
                 >
-                    <Avatar sx={{ m: 1, bgcolor: 'secondary.main' }}>
-                        <LockOutlinedIcon />
-                    </Avatar>
+                    <Avatar sx={{ m: 1 }} src={logo}></Avatar>
                     <Typography component="h1" variant="h5">
                         Barbearia Sabará
                     </Typography>
@@ -114,6 +107,6 @@ export function SignUp() {
                     </Box>
                 </Box>
             </Container>
-        </ThemeProvider>
+        </Box>
     );
 }
