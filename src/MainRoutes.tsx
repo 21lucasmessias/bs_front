@@ -1,3 +1,5 @@
+import { OptionSetting } from './components/settings/OptionSetting';
+import { PrivacySettings } from './components/settings/PrivacySettings';
 import { Scheduler } from './pages/Scheduler';
 
 export type Routes = 'Perfil' | 'Agendamento' | 'Configurações';
@@ -13,6 +15,6 @@ export const routes = {
     },
     Configurações: {
         name: 'Configurações',
-        Component: () => <></>,
+        Component: () => <PrivacySettings />,
     },
 };

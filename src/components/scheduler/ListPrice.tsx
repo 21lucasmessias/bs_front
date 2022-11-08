@@ -26,12 +26,12 @@ export function ListPrice({ backStep, nextStep }: SchedulerRouteParams) {
                                 display: 'flex',
                                 borderRadius: 1.8,
                                 alignItems: 'center',
+                                width: 330,
                                 height: 40,
                             }}
                         >
                             <Typography
                                 sx={{
-                                    width: 110,
                                     margin: 0,
                                 }}
                             >
@@ -39,10 +39,10 @@ export function ListPrice({ backStep, nextStep }: SchedulerRouteParams) {
                             </Typography>
                             <Typography
                                 sx={{
-                                    width: 70,
-                                    margin: 0,
                                     position: 'absolute',
-                                    right: 0,
+                                    right: 25,
+                                    borderRadius: 1.8,
+                                    backgroundColor: 'secondary.main',
                                 }}
                             >
                                 R${price}
