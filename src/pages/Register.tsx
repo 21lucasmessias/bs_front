@@ -69,7 +69,7 @@ export function SignUp() {
                                     type="number"
                                     label="Número do Celular"
                                     name="celular"
-                                    autoComplete="cpf"
+                                    autoComplete="number"
                                 />
                             </Grid>
                             <Grid item xs={12}>

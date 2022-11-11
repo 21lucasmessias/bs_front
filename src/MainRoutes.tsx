@@ -1,4 +1,5 @@
 import { OptionSetting } from './components/settings/OptionSetting';
+import { Password } from './components/settings/pathSettings/Password';
 import { PrivacySettings } from './components/settings/PrivacySettings';
 import { Scheduler } from './pages/Scheduler';
 
@@ -15,6 +16,6 @@ export const routes = {
     },
     Configurações: {
         name: 'Configurações',
-        Component: () => <PrivacySettings />,
+        Component: () => <Password />,
     },
 };
