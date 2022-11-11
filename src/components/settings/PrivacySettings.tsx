@@ -3,8 +3,9 @@ import List from '@mui/material/List';
 import Divider from '@mui/material/Divider';
 
 import { ListItemText, Typography, ListItemButton, Card } from '@mui/material';
+import { SettingsRouteParams } from '../../pages/Settings';
 
-export function PrivacySettings() {
+export function PrivacySettings({ backStep, nextStep, nextStepPhone, nextStepEmail }: SettingsRouteParams) {
     return (
         <Card sx={{ width: 500 }}>
             <ListItemButton>
@@ -15,7 +16,8 @@ export function PrivacySettings() {
                             Modifique a sua senha.{' '}
                         </Typography>
                     }
-                ></ListItemText>
+                    onClick={nextStep}
+                />
             </ListItemButton>
 
             <Divider variant="inset" />
@@ -28,7 +30,8 @@ export function PrivacySettings() {
                             Troque seu número para contato.{' '}
                         </Typography>
                     }
-                ></ListItemText>
+                    onClick={nextStepPhone}
+                />
             </ListItemButton>
             <Divider variant="inset" />
             <ListItemButton>
@@ -39,7 +42,8 @@ export function PrivacySettings() {
                             Altere seu atual email.{' '}
                         </Typography>
                     }
-                ></ListItemText>
+                    onClick={nextStepEmail}
+                />
             </ListItemButton>
         </Card>
     );

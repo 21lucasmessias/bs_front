@@ -9,10 +9,6 @@ import { CircularProgress } from '@mui/material';
 import { Home } from './pages/Home';
 import { SignIn } from './pages/Login';
 import { SignUp } from './pages/Register';
-import { OptionSetting } from './components/settings/OptionSetting';
-import { PrivacySettings } from './components/settings/PrivacySettings';
-import { Password } from './components/settings/pathSettings/Password';
-import { Phone } from './components/settings/pathSettings/Phone';
 
 export function Router() {
     return (
@@ -22,10 +18,6 @@ export function Router() {
                 <Route path="/" element={<Home />} />
                 <Route path="/login" element={<SignIn />} />
                 <Route path="/register" element={<SignUp />} />
-                <Route path="/OptionSetting" element={<OptionSetting />} />
-                <Route path="/PrivacySettings" element={<PrivacySettings />} />
-                <Route path="/Password" element={<Password />} />
-                <Route path="/Phone" element={<Phone />} />
                 <Route
                     path="/home"
                     element={

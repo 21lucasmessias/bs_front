@@ -1,7 +1,10 @@
-import { OptionSetting } from './components/settings/OptionSetting';
-import { Password } from './components/settings/pathSettings/Password';
+import { OptionSettings } from './components/settings/OptionSettings';
+import { NewEmail } from './components/settings/pathSettings/NewEmail';
+import { NewPassword } from './components/settings/pathSettings/NewPassword';
+import { NewPhone } from './components/settings/pathSettings/NewPhone';
 import { PrivacySettings } from './components/settings/PrivacySettings';
 import { Scheduler } from './pages/Scheduler';
+import { Settings } from './pages/Settings';
 
 export type Routes = 'Perfil' | 'Agendamento' | 'Configurações';
 
@@ -16,6 +19,6 @@ export const routes = {
     },
     Configurações: {
         name: 'Configurações',
-        Component: () => <Password />,
+        Component: () => <Settings />,
     },
 };

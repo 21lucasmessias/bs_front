@@ -3,8 +3,9 @@ import List from '@mui/material/List';
 import Divider from '@mui/material/Divider';
 
 import { ListItemText, Typography, ListItemButton, Card } from '@mui/material';
+import { SettingsRouteParams } from '../../pages/Settings';
 
-export function OptionSetting() {
+export function OptionSettings({ backStep, nextStep }: SettingsRouteParams) {
     return (
         <Card>
             <ListItemButton>
@@ -15,6 +16,7 @@ export function OptionSetting() {
                             Gerencie a segurança da sua conta. Troque Número do celular, email e senha.{' '}
                         </Typography>
                     }
+                    onClick={nextStep}
                 ></ListItemText>
             </ListItemButton>
 
