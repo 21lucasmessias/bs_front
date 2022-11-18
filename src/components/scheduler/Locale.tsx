@@ -12,7 +12,7 @@ import { SchedulerRouteParams } from '../../pages/Scheduler';
 
 import { LocaleData } from '../../utils/LocalesUtils';
 
-export function CardLocale({ backStep, nextStep }: SchedulerRouteParams) {
+export function CardLocale({ nextStep }: SchedulerRouteParams) {
     const [localeSelected, setLocaleSelected] = useState<number | null>(null);
 
     const handleLocaleSelect = (idx: number) => {
@@ -23,9 +23,9 @@ export function CardLocale({ backStep, nextStep }: SchedulerRouteParams) {
         <Box>
             {LocaleData.map(({ name, address, image }, idx) => {
                 return (
-                    <Card sx={{ backgroundColor: localeSelected === idx ? 'red' : 'black' }}>
+                    <Card sx={{ backgroundColor: localeSelected === idx ? 'primary.main' : 'secondary.main' }}>
                         <CardActionArea onClick={() => handleLocaleSelect(idx)}>
-                            <Box sx={{ display: 'flex' }} padding={0.4}>
+                            <Box sx={{ display: 'flex', height: 145 }} padding={0.4}>
                                 <CardMedia component="img" sx={{ width: 151 }} image={image} alt={name} />
                                 <Box sx={{ display: 'flex', flexDirection: 'column' }}>
                                     <CardContent sx={{ flex: '1 0 auto' }}>
@@ -52,7 +52,7 @@ export function CardLocale({ backStep, nextStep }: SchedulerRouteParams) {
                 right={0}
                 left={0}
             >
-                <Button variant="contained" onClick={nextStep}>
+                <Button disabled={!localeSelected} variant="contained" onClick={nextStep}>
                     Proximo
                     <ChevronRightIcon />
                 </Button>

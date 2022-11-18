@@ -7,20 +7,28 @@ import Box from '@mui/material/Box';
 
 import Button from '@mui/material/Button';
 import ChevronRightIcon from '@mui/icons-material/ChevronRight';
+import ArrowBackIosIcon from '@mui/icons-material/ArrowBackIos';
 
 import { BarberData } from '../../utils/BarberUtils';
 import { SchedulerRouteParams } from '../../pages/Scheduler';
+import { useState } from 'react';
 
 export function CardBarber({ backStep, nextStep }: SchedulerRouteParams) {
+    const [localeSelected, setLocaleSelected] = useState<number | null>(null);
+
+    const handleLocaleSelect = (idx: number) => {
+        setLocaleSelected(idx);
+    };
     return (
         <Box display="grid" gridTemplateColumns="repeat(2,0.1fr)" gap={2}>
-            {BarberData.map(({ name, image }) => {
+            {BarberData.map(({ name, image }, idx) => {
                 return (
                     <Card
                         sx={{
                             width: 172,
                             height: 148,
                             justifyContent: 'center',
+                            backgroundColor: localeSelected === idx ? 'primary.main' : 'secondary.main',
                         }}
                     >
                         <CardActionArea>
@@ -36,6 +44,7 @@ export function CardBarber({ backStep, nextStep }: SchedulerRouteParams) {
                                     padding: 0,
                                     borderRadius: 7,
                                 }}
+                                onClick={() => handleLocaleSelect(idx)}
                             />
 
                             <Typography
@@ -64,10 +73,15 @@ export function CardBarber({ backStep, nextStep }: SchedulerRouteParams) {
                 right={0}
                 left={0}
             >
-                <Button variant="contained" onClick={nextStep}>
-                    Proximo
-                    <ChevronRightIcon />
-                </Button>
+                <Box>
+                    <Button sx={{ margin: 1 }} variant="contained" onClick={backStep}>
+                        <ArrowBackIosIcon />
+                    </Button>
+                    <Button disabled={!localeSelected} variant="contained" onClick={nextStep}>
+                        Proximo
+                        <ChevronRightIcon />
+                    </Button>
+                </Box>
             </Box>
         </Box>
     );
