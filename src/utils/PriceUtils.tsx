@@ -15,4 +15,40 @@ export const PriceData = [
         name: 'Sobrancelha',
         price: 25,
     },
+    {
+        name: 'Sobrancelha',
+        price: 25,
+    },
+    {
+        name: 'Sobrancelha',
+        price: 25,
+    },
+    {
+        name: 'Sobrancelha',
+        price: 25,
+    },
+    {
+        name: 'Sobrancelha',
+        price: 25,
+    },
+    {
+        name: 'Sobrancelha',
+        price: 25,
+    },
+    {
+        name: 'Sobrancelha',
+        price: 25,
+    },
+    {
+        name: 'Barba',
+        price: 30,
+    },
+    {
+        name: 'Barba',
+        price: 30,
+    },
+    {
+        name: 'Barba',
+        price: 30,
+    },
 ];

@@ -25,7 +25,7 @@ export function ListPrice({ backStep, nextStep }: SchedulerRouteParams) {
                     <Box
                         padding={0.3}
                         sx={{
-                            backgroundColor: localeSelected === idx ? 'primary.main' : 'secondary.main',
+                            backgroundColor: localeSelected === idx ? 'primary.light' : 'secondary.main',
                             borderRadius: 1.8,
                         }}
                         onClick={() => handleLocaleSelect(idx)}
@@ -72,7 +72,7 @@ export function ListPrice({ backStep, nextStep }: SchedulerRouteParams) {
                     <Button sx={{ margin: 1 }} variant="contained" onClick={backStep}>
                         <ArrowBackIosIcon />
                     </Button>
-                    <Button disabled={!localeSelected} variant="contained" onClick={nextStep}>
+                    <Button disabled={localeSelected == null} variant="contained" onClick={nextStep}>
                         Proximo
                         <ChevronRightIcon />
                     </Button>

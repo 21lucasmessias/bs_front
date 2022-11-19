@@ -23,10 +23,15 @@ export function CardLocale({ nextStep }: SchedulerRouteParams) {
         <Box>
             {LocaleData.map(({ name, address, image }, idx) => {
                 return (
-                    <Card sx={{ backgroundColor: localeSelected === idx ? 'primary.main' : 'secondary.main' }}>
+                    <Card sx={{ backgroundColor: localeSelected === idx ? 'primary.light' : 'secondary.main' }}>
                         <CardActionArea onClick={() => handleLocaleSelect(idx)}>
-                            <Box sx={{ display: 'flex', height: 145 }} padding={0.4}>
-                                <CardMedia component="img" sx={{ width: 151 }} image={image} alt={name} />
+                            <Box sx={{ display: 'flex', height: 145, padding: 0.5 }}>
+                                <CardMedia
+                                    component="img"
+                                    sx={{ width: 109, height: 105, borderRadius: 8 }}
+                                    image={image}
+                                    alt={name}
+                                />
                                 <Box sx={{ display: 'flex', flexDirection: 'column' }}>
                                     <CardContent sx={{ flex: '1 0 auto' }}>
                                         <Typography component="div" variant="h5">
@@ -36,7 +41,6 @@ export function CardLocale({ nextStep }: SchedulerRouteParams) {
                                             {address}
                                         </Typography>
                                     </CardContent>
-                                    <Box sx={{ display: 'flex', alignItems: 'center', pl: 1, pb: 1 }}></Box>
                                 </Box>
                             </Box>
                         </CardActionArea>
@@ -52,7 +56,7 @@ export function CardLocale({ nextStep }: SchedulerRouteParams) {
                 right={0}
                 left={0}
             >
-                <Button disabled={!localeSelected} variant="contained" onClick={nextStep}>
+                <Button disabled={localeSelected == null} variant="contained" onClick={nextStep}>
                     Proximo
                     <ChevronRightIcon />
                 </Button>

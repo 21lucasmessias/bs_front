@@ -28,7 +28,7 @@ export function CardBarber({ backStep, nextStep }: SchedulerRouteParams) {
                             width: 172,
                             height: 148,
                             justifyContent: 'center',
-                            backgroundColor: localeSelected === idx ? 'primary.main' : 'secondary.main',
+                            backgroundColor: localeSelected === idx ? 'primary.light' : 'secondary.main',
                         }}
                     >
                         <CardActionArea>
@@ -50,7 +50,6 @@ export function CardBarber({ backStep, nextStep }: SchedulerRouteParams) {
                             <Typography
                                 sx={{
                                     display: 'flex',
-
                                     margin: 0,
                                     justifyContent: 'center',
                                 }}
@@ -77,7 +76,7 @@ export function CardBarber({ backStep, nextStep }: SchedulerRouteParams) {
                     <Button sx={{ margin: 1 }} variant="contained" onClick={backStep}>
                         <ArrowBackIosIcon />
                     </Button>
-                    <Button disabled={!localeSelected} variant="contained" onClick={nextStep}>
+                    <Button disabled={localeSelected == null} variant="contained" onClick={nextStep}>
                         Proximo
                         <ChevronRightIcon />
                     </Button>
