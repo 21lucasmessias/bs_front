@@ -20,12 +20,19 @@ export function CardLocale({ nextStep }: SchedulerRouteParams) {
     };
 
     return (
-        <Box>
+        <Box sx={{ display: 'flex', flexDirection: 'column', gap: '1rem' }}>
             {LocaleData.map(({ name, address, image }, idx) => {
                 return (
-                    <Card sx={{ backgroundColor: localeSelected === idx ? 'primary.light' : 'secondary.main' }}>
+                    <Card
+                        sx={{
+                            opacity: localeSelected === idx ? 1 : 0.7,
+                            boxShadow: 'none',
+                            border: '1px solid gray',
+                            borderRadius: '8px',
+                        }}
+                    >
                         <CardActionArea onClick={() => handleLocaleSelect(idx)}>
-                            <Box sx={{ display: 'flex', height: 145, padding: 0.5 }}>
+                            <Box sx={{ display: 'flex', alignItems: 'center', height: 145, padding: 0.5 }}>
                                 <CardMedia
                                     component="img"
                                     sx={{ width: 109, height: 105, borderRadius: 8 }}
