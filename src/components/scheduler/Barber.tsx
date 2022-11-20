@@ -20,15 +20,15 @@ export function CardBarber({ backStep, nextStep }: SchedulerRouteParams) {
         setLocaleSelected(idx);
     };
     return (
-        <Box display="grid" gridTemplateColumns="repeat(2,0.1fr)" gap={2}>
+        <Box display="grid" gridTemplateColumns="repeat(2,0.1fr)" gap={2} justifyContent="space-between">
             {BarberData.map(({ name, image }, idx) => {
                 return (
                     <Card
                         sx={{
-                            width: 172,
-                            height: 148,
+                            opacity: localeSelected === idx ? 1 : 0.5,
+                            width: 164,
+                            height: 136,
                             justifyContent: 'center',
-                            backgroundColor: localeSelected === idx ? 'primary.light' : 'secondary.main',
                         }}
                     >
                         <CardActionArea>
@@ -41,8 +41,8 @@ export function CardBarber({ backStep, nextStep }: SchedulerRouteParams) {
                                     width: 109,
                                     height: 105.16,
                                     margin: 'auto',
-                                    padding: 0,
-                                    borderRadius: 7,
+                                    padding: 0.8,
+                                    borderRadius: '20px',
                                 }}
                                 onClick={() => handleLocaleSelect(idx)}
                             />
@@ -54,7 +54,7 @@ export function CardBarber({ backStep, nextStep }: SchedulerRouteParams) {
                                     justifyContent: 'center',
                                 }}
                                 gutterBottom
-                                variant="h5"
+                                variant="h6"
                                 component="div"
                             >
                                 {name}

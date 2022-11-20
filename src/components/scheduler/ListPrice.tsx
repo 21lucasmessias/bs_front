@@ -1,6 +1,7 @@
 import * as React from 'react';
 import Box from '@mui/material/Box';
-import Container from '@mui/material/Container';
+
+import Card from '@mui/material';
 import Button from '@mui/material/Button';
 import ChevronRightIcon from '@mui/icons-material/ChevronRight';
 import ArrowBackIosIcon from '@mui/icons-material/ArrowBackIos';
@@ -19,43 +20,23 @@ export function ListPrice({ backStep, nextStep }: SchedulerRouteParams) {
     };
 
     return (
-        <Box>
+        <Box sx={{ minWidth: 343 }}>
             {PriceData.map(({ name, price }, idx) => {
                 return (
                     <Box
-                        padding={0.3}
                         sx={{
-                            backgroundColor: localeSelected === idx ? 'primary.light' : 'secondary.main',
+                            opacity: localeSelected === idx ? 1 : 0.7,
+                            height: 48,
+                            display: 'flex',
                             borderRadius: 1.8,
+                            alignItems: 'center',
+                            justifyContent: 'space-between',
                         }}
                         onClick={() => handleLocaleSelect(idx)}
                     >
-                        <Container
-                            sx={{
-                                display: 'flex',
-                                borderRadius: 1.8,
-                                alignItems: 'center',
-                                width: 330,
-                                height: 40,
-                            }}
-                        >
-                            <Typography
-                                sx={{
-                                    margin: 0,
-                                }}
-                            >
-                                {name}
-                            </Typography>
-                            <Typography
-                                sx={{
-                                    position: 'absolute',
-                                    right: 25,
-                                    borderRadius: 1.8,
-                                }}
-                            >
-                                R${price}
-                            </Typography>
-                        </Container>
+                        <Typography sx={{ paddingLeft: 2 }}>{name}</Typography>
+
+                        <Typography sx={{ paddingRight: 2 }}>R${price}</Typography>
                     </Box>
                 );
             })}
