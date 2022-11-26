@@ -12,7 +12,7 @@ export const PriceData = [
         price: 80,
     },
     {
-        name: 'Sobrancelha',
+        name: 'Corte infantil',
         price: 25,
     },
     {
@@ -20,19 +20,7 @@ export const PriceData = [
         price: 25,
     },
     {
-        name: 'Sobrancelha',
-        price: 25,
-    },
-    {
-        name: 'Sobrancelha',
-        price: 25,
-    },
-    {
-        name: 'Sobrancelha',
-        price: 25,
-    },
-    {
-        name: 'Sobrancelha',
+        name: 'Cabelo barba e sobrancelha',
         price: 25,
     },
 ];

@@ -6,13 +6,14 @@ import Paper from '@mui/material/Paper';
 
 import CssBaseline from '@mui/material/CssBaseline';
 
-import Person from '@mui/icons-material/Person';
+import RestoreIcon from '@mui/icons-material/Restore';
+
 import Settings from '@mui/icons-material/Settings';
 import CalendarToday from '@mui/icons-material/CalendarToday';
 import { Routes, routes } from '../MainRoutes';
 
 export function Home() {
-    const [actualPage, setActualPage] = useState<Routes>('Perfil');
+    const [actualPage, setActualPage] = useState<Routes>('Histórico');
 
     const page = useMemo(() => {
         return routes[actualPage];
@@ -34,7 +35,7 @@ export function Home() {
                         setActualPage(page);
                     }}
                 >
-                    <BottomNavigationAction label="Perfil" icon={<Person />} value="Perfil" />
+                    <BottomNavigationAction label="Histórico" icon={<RestoreIcon />} value="Histórico" />
                     <BottomNavigationAction label="Agendamento" icon={<CalendarToday />} value="Agendamento" />
                     <BottomNavigationAction label="Configurações" icon={<Settings />} value="Configurações" />
                 </BottomNavigation>
