@@ -21,6 +21,8 @@ import CalendarToday from '@mui/icons-material/CalendarToday';
 import AttachMoneyIcon from '@mui/icons-material/AttachMoney';
 import LogoutIcon from '@mui/icons-material/Logout';
 import PersonIcon from '@mui/icons-material/Person';
+import PersonPinIcon from '@mui/icons-material/PersonPin';
+import RememberMeIcon from '@mui/icons-material/RememberMe';
 
 const drawerWidth = 240;
 
@@ -169,6 +171,24 @@ export const DesktopHomePage = () => {
                                 <AttachMoneyIcon />
                             </ListItemIcon>
                             <ListItemText sx={{ opacity: open ? 1 : 0 }}>Financeiro</ListItemText>
+                        </ListItemButton>
+                        <ListItemButton
+                            sx={{
+                                minHeight: 48,
+                                justifyContent: open ? 'initial' : 'center',
+                                px: 2.5,
+                            }}
+                        >
+                            <ListItemIcon
+                                sx={{
+                                    minWidth: 0,
+                                    mr: open ? 3 : 'auto',
+                                    justifyContent: 'center',
+                                }}
+                            >
+                                <RememberMeIcon />
+                            </ListItemIcon>
+                            <ListItemText sx={{ opacity: open ? 1 : 0 }}>Clientes</ListItemText>
                         </ListItemButton>
                     </ListItem>
                 </List>
